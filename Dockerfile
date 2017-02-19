@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER xujinkai <jack777@xujinkai.net>
+LABEL maintainer "Dean Camera <http://www.fourwalledcubicle.com>"
 
 RUN apk update && \
 	apk add --no-cache --update bash && \
