@@ -1,4 +1,5 @@
 #!/bin/sh
+
 if [ ! -f /conf/aria2.conf ]; then
 	cp /conf-copy/aria2.conf /conf/aria2.conf
 	if [ $SECRET ]; then

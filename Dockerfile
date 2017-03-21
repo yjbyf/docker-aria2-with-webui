@@ -2,15 +2,14 @@ FROM alpine:latest
 
 LABEL maintainer "Dean Camera <http://www.fourwalledcubicle.com>"
 
-RUN apk update && \
-	apk add --no-cache --update bash && \
-	mkdir -p /conf && \
+RUN mkdir -p /conf && \
 	mkdir -p /conf-copy && \
 	mkdir -p /data && \
-	apk add --no-cache --update aria2 && \
-	apk add --no-cache --update git && \
+	apk add --no-cache bash aria2 darkhttpd
+
+RUN	apk add --no-cache git && \
 	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
-	apk add --no-cache --update darkhttpd
+	apk del git
 
 ADD files/start.sh /conf-copy/start.sh
 ADD files/aria2.conf /conf-copy/aria2.conf
