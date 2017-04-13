@@ -1,11 +1,11 @@
-FROM alpine:latest
+FROM alpine:edge
 
 LABEL maintainer "Dean Camera <http://www.fourwalledcubicle.com>"
 
 RUN mkdir -p /conf && \
 	mkdir -p /conf-copy && \
 	mkdir -p /data && \
-	apk add --no-cache bash aria2 darkhttpd
+	apk add --no-cache tzdata bash aria2 darkhttpd
 
 RUN	apk add --no-cache git && \
 	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
