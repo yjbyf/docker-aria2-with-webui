@@ -40,6 +40,9 @@ If you wish to use a custom configuration, map in a `/config` volume with your
 custom `aria2.conf` configuration:
 
 ```
+docker run -d --name webui-aria2 -p 6800:6800 -p 6880:80 -v /c/Users/ivan.bai/Downloads:/data  -e PGID=100 -e PUID=1001 ivanbai77/docker-aria2-with-webui
+```
+```
 sudo docker run -d \
 --name aria2-with-webui \
 -p 6800:6800 \
